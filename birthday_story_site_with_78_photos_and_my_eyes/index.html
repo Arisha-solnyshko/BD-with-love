@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Архив твоих историй</title>
+  <meta name="description" content="Одностраничный сайт-подарок." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="icon.png">
+</head>
+<body id="top">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="На главную">
+      <span class="brand-heart">♥</span>
+      <span>для самого любимого</span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#stories">истории</a>
+      <a href="#my-eyes">ты моими глазами</a>
+      <a href="#photos">фотографии</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="hero-star" aria-hidden="true">★</span>
+      <div class="hero-inner">
+        <p class="eyebrow">✦ специальный выпуск</p>
+        <p class="script-word">архив</p>
+        <h1 id="hero-title" class="cutout-title" aria-label="Твоих историй">
+          <span class="cutout-word" aria-hidden="true">
+            <span class="tile blue">Т</span><span class="tile paper">В</span><span class="tile navy">О</span><span class="tile blue">И</span><span class="tile paper">Х</span>
+          </span>
+          <span class="cutout-word" aria-hidden="true">
+            <span class="tile navy">И</span><span class="tile paper">С</span><span class="tile blue">Т</span><span class="tile navy">О</span><span class="tile paper">Р</span><span class="tile blue">И</span><span class="tile paper">И</span>
+          </span>
+        </h1>
+        <p class="hero-copy">Один человек — и столько версий одной большой истории.</p>
+        <div class="stats" aria-label="Короткая статистика">
+          <span><b>∞</b> число воспоминаний</span>
+          <span><b>∞</b> количество улыбок</span>
+          <span><b>1</b> главный герой</span>
+        </div>
+        <a class="cta" href="#stories">открыть архив <span aria-hidden="true">↓</span></a>
+      </div>
+
+      <div class="corner-card corner-card-left" aria-hidden="true">
+        <span>HAPPY</span><strong>BIRTHDAY</strong><small>21</small>
+      </div>
+      <div class="corner-card corner-card-right" aria-hidden="true">
+        <small>birthday</small><strong>BOY</strong><span>★</span>
+      </div>
+      <div class="zigzag" aria-hidden="true"></div>
+    </section>
+
+    <section class="birthday-poster" aria-label="Праздничный постер">
+      <div class="poster-copy">
+        <p class="eyebrow dark">личное дело № 01</p>
+        <h2>Несколько фактов о тебе</h2>
+        <p>В детстве ты мечтал стать строителем, как твой дедушка. Любимой игрушкой у тебя было Lego. Сейчас ты хорошо разбираешься в играх, учишься программировать, хочешь однажды попробовать делать музыку и видишь своё будущее в IT.</p>
+
+        <div class="profile-notes" aria-label="Короткие факты из анкеты">
+          <span><b>детство</b> Lego</span>
+          <span><b>сейчас</b> игры + программирование</span>
+          <span><b>мечта</b> делать музыку</span>
+          <span><b>будущее</b> IT + семья</span>
+        </div>
+      </div>
+      <figure class="poster-frame">
+        <img src="assets/reference-birthday.png" alt="Праздничный коллаж" />
+      </figure>
+    </section>
+
+    <section class="stories section" id="stories">
+      <div class="section-heading">
+        <p class="eyebrow dark">собрано по крупицам</p>
+        <h2>Ты — глазами разных людей</h2>
+        <p>У архива три стороны: ответы твоих друзей, твоей мамы и твои собственные ответы. Формулировки сохранены такими, какими их написали сами близкие.</p>
+      </div>
+
+      <div class="story-toolbar">
+        <div class="tabs" role="tablist" aria-label="Категории историй">
+          <button class="tab is-active" data-filter="friend" type="button" aria-selected="true">Истории о друге</button>
+          <button class="tab" data-filter="family" type="button" aria-selected="false">Истории от мамы</button>
+          <button class="tab" data-filter="self" type="button" aria-selected="false">Истории о тебе</button>
+        </div>
+      </div>
+
+      <div class="topic-filter" id="friendTopicFilter" aria-label="Темы ответов друзей">
+        <button type="button" class="friend-topic-chip topic-chip is-active" data-topic="all">все вопросы</button>
+        <button type="button" class="friend-topic-chip topic-chip" data-topic="meeting">знакомство</button>
+        <button type="button" class="friend-topic-chip topic-chip" data-topic="character">характер</button>
+        <button type="button" class="friend-topic-chip topic-chip" data-topic="fun">приколы</button>
+        <button type="button" class="friend-topic-chip topic-chip" data-topic="support">поддержка</button>
+        <button type="button" class="friend-topic-chip topic-chip" data-topic="message">важное</button>
+      </div>
+
+      <div class="topic-filter" id="topicFilter" hidden aria-label="Темы личной анкеты">
+        <button type="button" class="topic-chip is-active" data-topic="all">все ответы</button>
+        <button type="button" class="topic-chip" data-topic="childhood">детство</button>
+        <button type="button" class="topic-chip" data-topic="personality">о себе</button>
+        <button type="button" class="topic-chip" data-topic="family">семья</button>
+        <button type="button" class="topic-chip" data-topic="us">мы</button>
+        <button type="button" class="topic-chip" data-topic="future">будущее</button>
+      </div>
+
+      <div class="story-grid" id="storyGrid">
+        <article class="story-card friend-card" data-kind="friend" data-topic="meeting">
+          <span class="tape"></span>
+          <p class="card-kicker">знакомство · 01</p>
+          <h3>Как вы познакомились?</h3>
+          <p>Где, когда и при каких обстоятельствах началась ваша история?</p>
+          <div class="story-answer">
+            <ol class="friend-answers"><li><p>Когда я учился в своем любимом 10а классе бездельников, мы начали общаться с компанией дебилов, но только один Вадим оказался адекватным.</p></li><li><p>Познакомились в школе, в 10 классе, когда я встретил этого человека, то понял, что он станет моим другом, хоть он немного и глуповат, зато с ним можно весело провести время.</p></li><li><p>Когда я перевелся в Лицей в 7 классе, в классе был паренек, который, как мне показалось, в один из первых учебных дней смеялся надо мной. Тогда, затаив обиду, я подумал, что никогда с таким плохим человеком общаться не буду. Пару недель спустя судьба распорядилась иначе. Нас посадили вместе на уроке русского языка. Зинаида Петровна зачитывала словарный диктант, дошла до слова «вареник», и мы с этим пареньком весь урок ржали с этого слова. Этим парнем был — Попов Вадим. С тех самых пор, Вадим является для меня одним из самых лучших друзей, что у меня когда-либо были :)</p></li><li><p>Впервые Вадима я увидел 1 сентября на встрече с одногруппниками. На фоне остальных он выглядел перспективно в плане общения. Так и заобщались.</p></li><li><p>Познакомились ещё в первом классе, на линейке стояли вместе, на первой перемене все начали беситься и мы с ним начали беситься вместе, так и бесимся 13 лет вместе.</p></li><li><p>Я эту морду впервые в 10 классе увидел, я че помню что там было, там скорее чего ток не было</p></li></ol>
+          </div>
+          <em>шесть разных стартов одной дружбы</em>
+          <button class="reveal" type="button">читать 6 ответов</button>
+        </article>
+
+        <article class="story-card friend-card" data-kind="friend" data-topic="meeting">
+          <span class="tape"></span>
+          <p class="card-kicker">знакомство · 02</p>
+          <h3>Первое впечатление</h3>
+          <p>Каким они увидели тебя при первой встрече — и что изменилось потом?</p>
+          <div class="story-answer">
+            <ol class="friend-answers"><li><p>Он пил много алкоголя и был в дурной компании, мне это очень не нравится, зато сейчас он исправился и стал интеллигентным человеком, который начал общаться с еще более дурной компанией.</p></li><li><p>Сначала я подумал, что это обычный, ничем не примечательный парень, узнал, что он достаточно образован, сдавал физику и др. технические предметы, а потом он открылся мне, как простой работяга, который умеет радоваться мелочам, человек, который поддержит тебя в трудную минуту и готов предложить свою помощь в любом деле.</p></li><li><p>Короче, не понравился он мне ужасно, думал, что будь я чуть сильнее и менее стеснительным в то время, то непременно дал бы в нос любителю смеяться. Повторюсь, мне тогда это показалось) Затем мнение изменилось кардинально, Вадим оказался очень добрым, адекватным и, что самое главное, понимающим другом.</p></li><li><p>Увидел адекватного человека, он узнал песенку Фараона и т. д. В принципе, первое впечатление меня не подвело.</p></li><li><p>Да я не помню даже, мама рассказывала, что мы на линейке интуитивно вместе встали и начали…</p><span class="partial-note">Продолжение ответа не попало на скриншот.</span></li><li><p>Не ну тупо мясо, вот таким я его увидел потом пообщались, и я понял что тупо ебанутое мясо</p></li></ol>
+          </div>
+          <em>первое впечатление иногда очень ошибается</em>
+          <button class="reveal" type="button">читать 6 ответов</button>
+        </article>
+
+        <article class="story-card friend-card" data-kind="friend" data-topic="character">
+          <span class="tape"></span>
+          <p class="card-kicker">характер · 01</p>
+          <h3>Три прилагательных</h3>
+          <p>Как друзья описывают тебя — серьёзно, смешно и максимально по-своему.</p>
+          <div class="story-answer">
+            <ol class="friend-answers"><li><p>Весёлый, добрый, упрямый. Легко рассмешить, даже с несмешной шуткой. С этим человеком трудно поссориться, ведь он лучше переведёт тему или пошутит. Иногда тяжело переубедить, он верен своему выбору, стилю в одежде, музыке, технике, и будет отстаивать свою точку зрения.</p></li><li><p>Спокойный, смешной, трудолюбивый.</p></li><li><p>Дружелюбный, веселый, интересный.</p></li><li><p>Добрый (хз почему, просто он добрый). Смешной (я же говорю, интуиция! чувство юмора у нас одинаковое, вот и смеемся со всякой х*йни). Комфортик (один из немногих людей, с которыми мне всегда по-настоящему комфортно).</p></li><li><p>Душевный Юморной doubleRR</p></li></ol>
+          </div>
+          <em>портрет из пяти голосов</em>
+          <button class="reveal" type="button">читать 5 ответов</button>
+        </article>
+
+        <article class="story-card friend-card" data-kind="friend" data-topic="fun">
+          <span class="tape"></span>
+          <p class="card-kicker">приколы · 01</p>
+          <h3>Самый смешной случай</h3>
+          <p>Те истории, которые невозможно нормально объяснить людям вне вашей компании.</p>
+          <div class="story-answer">
+            <ol class="friend-answers"><li><p>Сосал банан на гифку.</p></li><li><p>Мы с Вадимом нахуярились в слюни у меня на хате, смотрели видосы, приколы и уже умирали со смеху, потом он попытался разложить диван, мне с этого смешно стало и я сказал действительно обидную, но на тот момент смешную фразу «Иди об стенку разъебись» ну кароче, просто хорошо провели вечер)</p></li><li><p>Ситуаций было оооочень много, причем всяких разных. От конфликтной ситуации в Северо-Западном районе, до стягивания с меня шорт в прищепке. Я уверен, что были ситуации смешнее той, про которую я напишу, но сходу не могу вспомнить ещё) В той же прищепке, до того, как Вадим ловким движением рук почти снял с меня шорты, я зашел в спираль для переодевания. И в самый неприятный момент, когда я был в процессе переодевания, какой-то любопытный маленький мальчик подбежал, и решил посмотреть что же у меня там происходит. Увидев маленькую голову, неожиданно высунувшуюся из-под низа спиральки, я был настолько растерян, что единственное, что мне пришло в голову — ударить его ногой, попробовать как-то выгнать. Но, слава богу, до этого не дошло, мама мальчика тут же дернула его обратно. Вадим тогда много смеялся с такой ситуации, да и по сей день, когда мы это вспоминаем, нам очень смешно.</p></li><li><p>У Вадима на др Лёха нарисовал писюн на пятке Вадима, пока тот прилёт.</p></li><li><p>Когда он чуть не уплыл, как мамонтенок на льдине, на озере зимой, было смешно, наша любимая история)</p></li><li><p>Я не помню, но он угарно под трек вайперов на хате у себя танцевал ;)</p></li></ol>
+          </div>
+          <em>архив компромата открыт</em>
+          <button class="reveal" type="button">читать 6 ответов</button>
+        </article>
+
+        <article class="story-card friend-card" data-kind="friend" data-topic="fun">
+          <span class="tape"></span>
+          <p class="card-kicker">приколы · 02</p>
+          <h3>Самый безбашенный поступок</h3>
+          <p>Рискованные, глупые и поэтому незабываемые совместные решения.</p>
+          <div class="story-answer">
+            <ol class="friend-answers"><li><p>Пошли в ростикс на последние бабки на карте, этот пидорас ебанный забайтил меня покушать блядский ростик, хотя я и так жирной уебище (он тоже толстый хуесос).</p></li><li><p>Мы с Вадимом рисовали граффити, а потом вышел сосед, менты проехали и мы убежали. Идея была общая, мне до сих пор стыдно.</p></li><li><p>Залезли пальцем в распакованный торт в батоне, а потом спиздили Барни. Можно было бы использовать синоним без мата, но в нашей ситуации мы не украли, а именно спиздили маленького Мишку, который отделился от своей стаи и одиноко лежал на полке. Звучит как полная тупость, но это один из лучших дней в моей жизни, тк денег тогда не было вообще, но мне, Вадиму и Кирюхе было очень весело и смешно, вайбово было, реально.</p></li><li><p>Два сникерса по цене ни одного из Командора в рюкзаке Вадима (Вадим был не в курсе).</p></li><li><p>Такого наверное не вспомню, но инициировал всякие пакости я обычно, но он тоже хорош, его не надо было особо уговаривать)</p></li><li><p>Не помню такого, ну не в двоем, мы по его идее тебе в хате хлопушку взорвали ХАХАХХА, это было самое рисковое что мы делали в своей жизни</p></li></ol>
+          </div>
+          <em>не повторять, просто хранить в архиве</em>
+          <button class="reveal" type="button">читать 6 ответов</button>
+        </article>
+
+        <article class="story-card friend-card" data-kind="friend" data-topic="support">
+          <span class="tape"></span>
+          <p class="card-kicker">поддержка · 01</p>
+          <h3>За что тебя ценят как друга</h3>
+          <p>Что ты делаешь такого, за что друзья тебе по-настоящему благодарны?</p>
+          <div class="story-answer">
+            <ol class="friend-answers"><li><p>Ну он вообще ровный челик, может сделать чо угодно. Я к нему обратиться с проблема и он поможет, Вадя общительный чел, еще с ним можно поговорить по душам классно. Короче лев ебать его.</p></li><li><p>С ним легко общаться, от него хорошая поддержка.</p></li><li><p>В моем постепенном становлении как личности, я вел себя не очень красиво по отношению к друзьям, за что уже неоднократно извинялся, а так же, пообещал себе, что никогда больше так поступать не буду. То-ли я был маленький и глупый, то-ли просто был не в том возрасте, чтобы должным образом ценить людей, которые меня окружают. Я считаю, что Вадим довольно преданный друг, который поможет, чего бы у меня не случилось, и я в свою очередь, готов поступить точно так же. Он помнит меня ещё с момента, когда я относился к друзьям наплевательски, и остается, повторюсь, одним из лучших моих друзей сейчас, не смотря на то, какие ошибки я допускал раньше. Очень это ценю, правда. Вадим всегда выслушает, всегда сможет помочь, да и просто с ним проводить время всегда классно.</p></li><li><p>Можно поручить работу и знать что он ее не выполнит.</p></li><li><p>За пройденный путь вместе, за то что я могу на него положиться, как на друга, да и за то что я…</p><span class="partial-note">Продолжение ответа не попало на скриншот.</span></li><li><p>Душевный чувак и музыку классную слушает</p></li></ol>
+          </div>
+          <em>здесь уже почти без приколов</em>
+          <button class="reveal" type="button">читать 6 ответов</button>
+        </article>
+
+        <article class="story-card friend-card" data-kind="friend" data-topic="character">
+          <span class="tape"></span>
+          <p class="card-kicker">характер · 02</p>
+          <h3>Фирменная фраза</h3>
+          <p>Что ты говоришь настолько часто, что это уже часть личного бренда?</p>
+          <div class="story-answer">
+            <ol class="friend-answers"><li><p>Ставлю жопу.</p></li><li><p>Ойий хорошая.</p></li><li><p>Мне больше всего запомнилась «слита дура» ну и естественно, «вареник» с которого нас вынесло ещё будучи детьми.</p></li><li><p>сосал</p></li><li><p>Не знаю, тренды меняются, Вадим идет в ногу со временем, фирменной фразы наверное нема.</p></li><li><p>Ой все, заебало</p></li></ol>
+          </div>
+          <em>словарь Вадима, версия друзей</em>
+          <button class="reveal" type="button">читать 6 ответов</button>
+        </article>
+
+        <article class="story-card friend-card" data-kind="friend" data-topic="support">
+          <span class="tape"></span>
+          <p class="card-kicker">поддержка · 02</p>
+          <h3>Как ты ведёшь себя в трудной ситуации</h3>
+          <p>Когда проблемы у тебя или у друга — что замечают люди рядом?</p>
+          <div class="story-answer">
+            <ol class="friend-answers"><li><p>Ну он постоянно спрашивает советы, что бы посмотреть с другой стороны на проблему, или просто может помощи попросить.</p></li><li><p>Грусни, нервничает, но старается решить проблему.</p></li><li><p>Был готов ехать лить лицо какому-то спортсмену, когда было нужно. В тот день я многое понял, кто и как готов мне помочь, если у меня проблемы. Когда я был на грани отчисления, Вадим предлагал мне устроить меня к нему, обещал научить основам, просто чтобы не забрали в армию. В очередной раз скажу: это один из моих лучших друзей. Мне было плохо? Он поможет, поговорит. У меня проблемы? Он готов помочь в решении. У меня все хорошо? Он просто рад за меня.</p></li><li><p>не справляется</p></li><li><p>Особо трудностей у нас не возникало, или мы не делились ими (такая вот мужская дружба👯), но я всегда знаю, что я могу написать в тихий омут, и мне помогут.</p></li><li><p>Психует как маленькая девочка ;)</p></li></ol>
+          </div>
+          <em>важнее любой красивой характеристики</em>
+          <button class="reveal" type="button">читать 6 ответов</button>
+        </article>
+
+        <article class="story-card friend-card" data-kind="friend" data-topic="fun">
+          <span class="tape"></span>
+          <p class="card-kicker">приколы · 03</p>
+          <h3>История, которую до сих пор вспоминают и ржут</h3>
+          <p>Шесть разных кандидатов на звание главной легенды архива.</p>
+          <div class="story-answer">
+            <ol class="friend-answers"><li><p>Мы были у Лехи на даче, и это долбоаеб (Вадим) уронил шашлыки на землю это было очень смешно.</p></li><li><p>У меня на даче мы жарили шашлыки, куски были толстые, поэтому решётка была закрыта не до конца, и Вадим говорит, прикинь если кто-то это все уронит. Так и произошло. Этим человеком был Вадим и мы ели шашлыки с газона.</p></li><li><p>Ещё в седьмом классе, когда мы шли втроем: я, Вадим, Кирилл. Впереди шла женщина. Дабы сохранить лицо всех участников этой истории, я не буду вдаваться в подробности, кто и что про неё сказал, но если Вадим ВДРУГ прочитает именно этот ответ на вопрос, он поймет. «История про бабку и Кирюху».</p></li><li><p>Мы часто вспоминали что Вадим приносил поесть, например, черный банан, или, то что до сих пор вызывает у нас улыбку — пропавшая гречка с мандаринками в перемешку.</p></li><li><p>Оооооййй, ну емае, насколько уже заезжено и не смешно, но как же было смешно тогда, крч пришли мы на озеро зимой после школы, класс 6-7 был, было относительно начало зимы, но озеро уже не плохо промерзло. Мы любили тогда заниматься там всякой хуйнёй, письки огромные рисовать на снегу самого озера, что люди утром выглядывали в окошко, а там елда с их дом). И увидели мы большую такую трещину на краю озера, клинообразной формы. И давай перепрыгивать бл через нее с узкой стороны. Сначала я перепрыгиваю, по щиколотку оказался в воде из-за отколовшегося льда, потом следом прыгнул Вадим, акурат двумя ножками на край. И тут я вижу, как после приземления, вокруг его ног образуется трещина, откалывается и вместе с ним идет ко дну как титаник, так медленно ещё, кинематографично. Ну и я как настоящий друг не побежал его спасать, а начал усыкаться кипятком с этого момент, в итоге успел он выскочить, одна нога была почти по колено мокрая, вторая примерно по щиколотку. Конец 🤓</p></li><li><p>Я не помню такого, но мне смешно с его компа было постоянно, он его тупо переставил, а мать сгорела хах)</p></li></ol>
+          </div>
+          <em>от шашлыков с газона до мамонтёнка на льдине</em>
+          <button class="reveal" type="button">читать 6 ответов</button>
+        </article>
+
+        <article class="story-card friend-card" data-kind="friend" data-topic="support">
+          <span class="tape"></span>
+          <p class="card-kicker">поддержка · 03</p>
+          <h3>Чему ты их научил</h3>
+          <p>Осознанно или случайно — что друзья унесли из вашей дружбы с собой?</p>
+          <div class="story-answer">
+            <ol class="friend-answers"><li><p>Не ставить жопу.</p></li><li><p>Программированию от части, не бояться опозориться публично)</p></li><li><p>Вадим научил меня в первую очередь тому, что нужно ценить людей рядом, которые будут с тобой и за тебя не смотря ни на что. Я уже говорил об этом где-то в других вопросах, но Вадим был со мной в период, когда я вел себя глупо, но он всё ещё тут. Я понял, что таких людей как Вадим мало не только в данный момент моей жизни, но и во всём мире, и когда-то давно, я понял все ошибки, что были допущены, извинился, и пообещал, что не стану больше так поступать со своими искренними, преданными и близкими друзьями.</p></li><li><p>охранять лоутаб</p></li><li><p>Наверное он был для меня примером ответственности, целенаправленности и тайм менеджмента, он об этом не знал, но в осознанном возрасте, я понял, что по крайней мере в моих глазах, он знает куда стремится, умеет распределять свое время и свои приоритеты с умом (ну не всегда, но в основном).</p></li><li><p>2 + 2 = 5 тыщь</p></li></ol>
+          </div>
+          <em>иногда влияние видно лучше со стороны</em>
+          <button class="reveal" type="button">читать 6 ответов</button>
+        </article>
+
+        <article class="story-card friend-card" data-kind="friend" data-topic="message">
+          <span class="tape"></span>
+          <p class="card-kicker">важное · 01</p>
+          <h3>Что друзья хотят сказать тебе прямо сейчас</h3>
+          <p>Последняя страница дружеской части архива — без общего правильного ответа.</p>
+          <div class="story-answer">
+            <ol class="friend-answers"><li><p>Я стану отцом, я бы ему сто проц мог сказать, а это нихуя себе как будто.</p></li><li><p>Вадим купи компьютер и газ в контен страйк. А вообще не переживай все будет, главное не останавливаться.</p></li><li><p>Я бы сказал ему, что мы его все очень любим и ценим. Чтобы он не боялся попросить нас о чем-то, я уверен, что мы все готовы ему помочь, чего бы не произошло. Я считаю, что он нереально крут, и я благодарен ему за пример такого друга, которого до него я не встречал.</p></li><li><p>Рад, что мы тогда начали общаться.</p></li><li><p>ОПА ОПА, ВЕРНИТЕ СОТКУ ПИДОРЫ</p></li><li><p>Оставайся собой броу)))</p></li></ol>
+          </div>
+          <em>шесть сообщений лично тебе</em>
+          <button class="reveal" type="button">читать 6 ответов</button>
+        </article>
+
+
+        <!-- ОТВЕТЫ МАМЫ -->
+        <article class="story-card personal-card family-card" data-kind="family" data-topic="family" hidden>
+          <span class="tape"></span>
+          <h3>История его рождения</h3>
+          <p>Как вы узнали, что он появится? Как ждали? Как это было?</p>
+          <div class="story-answer">Я очень любила его отца и хотела ребенка! Вадим с первых недель появления в животе и до самих родов то и дело подкидывал нам сюрпризы! Я 2 раза лежала с ним на сохранении, было оперативное вмешательство, чтоб не потерять его! За месяц до родов он перестал развиваться, мне ставили капельницы и уколы в живот! К тому же он не смог во время перевернуться в животе, операция была неизбежна! Ждали его, молились, боялись и переживали, что потеряем его! Он родился раньше срока на неделю с весом 2380гр.</div>
+          <button class="reveal" type="button" aria-label="Показать ответ">＋</button>
+        </article>
+
+        <article class="story-card personal-card family-card" data-kind="family" data-topic="family" hidden>
+          <span class="tape"></span>
+          <h3>Каким он был ребёнком?</h3>
+          <p>Опишите тремя словами.</p>
+          <div class="story-answer">Красивым, послушным и спокойным!!!</div>
+          <button class="reveal" type="button" aria-label="Показать ответ">＋</button>
+        </article>
+
+        <article class="story-card personal-card family-card" data-kind="family" data-topic="family" hidden>
+          <span class="tape"></span>
+          <h3>Самая смешная история из его детства</h3>
+          <p>Что он сделал или сказал?</p>
+          <div class="story-answer">Смешного было много, опишу 2 эпизода! Днем уснули, Вадиму года 3-4, он проснулся, я сплю. Взял ножницы и зачем-то отстриг мне огромную прядь волос! По самый корень! Причем будучи левшой... самыми обычными ножницами(это вообще нереально). У меня на затылке была просто плешь с 5 рублевую монету! Еще он раз немного (да нет, много) испачкал ладошки, когда, простите, вытирал попу и успешно вытер ладошки об кафель в туалете!</div>
+          <button class="reveal" type="button" aria-label="Показать ответ">＋</button>
+        </article>
+
+        <article class="story-card personal-card family-card" data-kind="family" data-topic="family" hidden>
+          <span class="tape"></span>
+          <h3>За что его ругали чаще всего? И за что хвалили?</h3>
+          <div class="story-answer">За учебу хвалила, ругала за все наверно, на что сейчас бы даже внимание не обратила! Мало хвалила, сейчас до сих пор переживаю об этом!</div>
+          <button class="reveal" type="button" aria-label="Показать ответ">＋</button>
+        </article>
+
+        <article class="story-card personal-card family-card" data-kind="family" data-topic="family" hidden>
+          <span class="tape"></span>
+          <h3>Какой момент его взросления запомнился вам больше всего?</h3>
+          <div class="story-answer">Начальные классы, волнительно и страшно, ездил в переполненном автобусе, маленький, школа далеко. 11 класс был не менее волнительным, экзамены и самое главное... переход во взрослую жизнь.</div>
+          <button class="reveal" type="button" aria-label="Показать ответ">＋</button>
+        </article>
+
+        <article class="story-card personal-card family-card" data-kind="family" data-topic="family" hidden>
+          <span class="tape"></span>
+          <h3>Каким вы видите его сейчас? Что в нём осталось от того малыша?</h3>
+          <div class="story-answer">Все! Мягкость характера но при этом огромная сила духа! Терпение и правильная жизненная позиция!</div>
+          <button class="reveal" type="button" aria-label="Показать ответ">＋</button>
+        </article>
+
+        <article class="story-card personal-card family-card" data-kind="family" data-topic="family" hidden>
+          <span class="tape"></span>
+          <h3>Что бы вы хотели ему сказать, но, может быть, не говорили?</h3>
+          <div class="story-answer">Что очень сильно его люблю! Говорила мало, сейчас казню себя за это! Поддержу его всегда, приму любой его выбор и позицию!</div>
+          <button class="reveal" type="button" aria-label="Показать ответ">＋</button>
+        </article>
+
+        <article class="story-card personal-card family-card" data-kind="family" data-topic="family" hidden>
+          <span class="tape"></span>
+          <h3>Каким вы его запомнили, когда он был совсем маленьким?</h3>
+          <div class="story-answer">Он был необычайно красивым ребенком, на него все обращали внимание!</div>
+          <button class="reveal" type="button" aria-label="Показать ответ">＋</button>
+        </article>
+
+        <article class="story-card personal-card family-card" data-kind="family" data-topic="family" hidden>
+          <span class="tape"></span>
+          <h3>Самый тёплый момент, который вы вспоминаете о нём?</h3>
+          <div class="story-answer">Момент, когда первый раз взяла его на руке в роддоме и когда отпускал шарик в небо на своем школьном выпускном, я смотрела на него и видела, как он загадывает желание, он прям шепчет его!!!!</div>
+          <button class="reveal" type="button" aria-label="Показать ответ">＋</button>
+        </article>
+
+        <article class="story-card personal-card family-card" data-kind="family" data-topic="family" hidden>
+          <span class="tape"></span>
+          <h3>Чему он вас научил?</h3>
+          <div class="story-answer">Упорству!!!!</div>
+          <button class="reveal" type="button" aria-label="Показать ответ">＋</button>
+        </article>
+
+        <article class="story-card personal-card family-card feature-card" data-kind="family" data-topic="family" hidden>
+          <span class="tape"></span>
+          <h3>Что бы вы ему пожелали?</h3>
+          <div class="story-answer">Пожелать хочу ему везения... во всем, в карьере, дружбе, любви!!! Чтоб был счастливее меня а я от этого тоже буду становиться счастливее!!!</div>
+          <button class="reveal" type="button" aria-label="Показать ответ">＋</button>
+        </article>
+
+        <!-- ЛИЧНЫЕ ОТВЕТЫ: ДЕТСТВО -->
+        <article class="story-card personal-card" data-kind="self" data-topic="childhood" hidden>
+          <span class="tape"></span><p class="card-kicker">детство · 01</p>
+          <h3>Самое раннее воспоминание</h3>
+          <p>Какой момент сохранился самым первым?</p>
+          <div class="story-answer">«Кушаю в садике»</div>
+          <em>маленький кадр из самого начала</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="childhood" hidden>
+          <span class="tape"></span><p class="card-kicker">детство · 02</p>
+          <h3>Любимая игрушка</h3>
+          <p>Какая игрушка была самой любимой?</p>
+          <div class="story-answer">«Лего»</div>
+          <em>похоже, собирать мир по деталям нравилось всегда</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="childhood" hidden>
+          <span class="tape"></span><p class="card-kicker">детство · 04</p>
+          <h3>Кем хотел стать</h3>
+          <p>Кем ты хотел стать, когда вырастешь?</p>
+          <div class="story-answer">«Строителем. Им на тот момент работал мой дедушка»</div>
+          <em>первая профессия мечты</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="childhood" hidden>
+          <span class="tape"></span><p class="card-kicker">детство · 05</p>
+          <h3>Самый смешной случай в школе</h3>
+          <p>История, которую невозможно было придумать специально.</p>
+          <div class="story-answer">«Когда у меня порвались брюки, и учительница отправила меня в туалет их зашивать (это был 2 класс)»</div>
+          <em>архив школьных приключений</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="childhood" hidden>
+          <span class="tape"></span><p class="card-kicker">детство · 07</p>
+          <h3>Самый смелый поступок</h3>
+          <p>Что в детстве требовало настоящей храбрости?</p>
+          <div class="story-answer">«Когда я признался, что получил 2»</div>
+          <em>смелость бывает очень разной</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="personality" hidden>
+          <span class="tape"></span><p class="card-kicker">о себе · 01</p>
+          <h3>Что пригодилось из школы</h3>
+          <p>Что из школьного опыта реально осталось с тобой?</p>
+          <div class="story-answer">«Находить нестандартные пути решения»</div>
+          <em>навык, который действительно пригодился</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <!-- ЛИЧНОСТЬ -->
+        <article class="story-card personal-card" data-kind="self" data-topic="personality" hidden>
+          <span class="tape"></span><p class="card-kicker">о себе · 02</p>
+          <h3>В чём ты разбираешься</h3>
+          <p>Что уже получается хорошо, а чему ещё учишься?</p>
+          <div class="story-answer">«Хорошо разбираюсь в играх. Учусь программировать»</div>
+          <em>текущая версия героя</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="personality" hidden>
+          <span class="tape"></span><p class="card-kicker">о себе · 03</p>
+          <h3>Черта характера</h3>
+          <p>Чем гордишься и что хотел бы исправить?</p>
+          <div class="story-answer">«Спокойствие. Лень»</div>
+          <em>коротко и очень точно</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="personality" hidden>
+          <span class="tape"></span><p class="card-kicker">о себе · 04</p>
+          <h3>Что делает обычный день счастливым</h3>
+          <p>Что может сделать даже обычный вторник хорошим?</p>
+          <div class="story-answer">«Если я провожу время с важными мне людьми»</div>
+          <em>кажется, это один из главных ответов</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+
+        <article class="story-card personal-card" data-kind="self" data-topic="personality" hidden>
+          <span class="tape"></span><p class="card-kicker">о себе · 06</p>
+          <h3>Музыка для момента триумфа</h3>
+          <p>Что должно играть, когда всё получилось?</p>
+          <div class="story-answer">«Мелодия из “Мстители: Финал”»</div>
+          <em>саундтрек победного кадра</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <!-- СЕМЬЯ -->
+        <article class="story-card personal-card" data-kind="self" data-topic="family" hidden>
+          <span class="tape"></span><p class="card-kicker">семья · 01</p>
+          <h3>Что значит быть мужчиной</h3>
+          <p>Как ты сам определяешь эту ответственность?</p>
+          <div class="story-answer">«Обеспечивать свою семью, решать все вопросы и проблемы в семье. Быть опорой для своей семьи»</div>
+          <em>твоя формулировка опоры</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="family" hidden>
+          <span class="tape"></span><p class="card-kicker">семья · 02</p>
+          <h3>За что благодарен семье</h3>
+          <p>Что для тебя важнее всего в поддержке близких?</p>
+          <div class="story-answer">«За то, что мне помогают и поддерживают меня в моих начинаниях»</div>
+          <em>то, что хочется помнить всегда</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <!-- МЫ -->
+        <article class="story-card personal-card" data-kind="self" data-topic="us" hidden>
+          <span class="tape"></span><p class="card-kicker">мы · 01</p>
+          <h3>Наша первая встреча</h3>
+          <p>Каким ты запомнил момент нашей первой встречи?</p>
+          <div class="story-answer">«Удивился, что она со мной разговаривает»</div>
+          <em>тот самый первый кадр</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card feature-card" data-kind="self" data-topic="us" hidden>
+          <span class="tape"></span><p class="card-kicker">мы · 02</p>
+          <h3>Когда понял, что любишь меня</h3>
+          <p>Что происходило внутри в тот момент?</p>
+          <div class="story-answer">«Я был полон энтузиазма, потому что у меня были целые планы по поводу того, как тебе понравиться. Когда у меня что-то не получалось или общение не складывалось, я очень сильно из-за этого расстраивался»</div>
+          <em>один из самых личных ответов</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card feature-card" data-kind="self" data-topic="us" hidden>
+          <span class="tape"></span><p class="card-kicker">мы · 03</p>
+          <h3>Наша общая мечта</h3>
+          <p>Какой ты видишь самую важную мечту для нас?</p>
+          <div class="story-answer">«Много путешествовать и, несмотря на ссоры, стать счастливой семьёй»</div>
+          <em>пожалуй, это стоит оставить на виду</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <!-- БУДУЩЕЕ -->
+        <article class="story-card personal-card" data-kind="self" data-topic="future" hidden>
+          <span class="tape"></span><p class="card-kicker">будущее · 01</p>
+          <h3>Суперсила</h3>
+          <p>Если бы можно было выбрать одну — какую и почему?</p>
+          <div class="story-answer">«Путешествовать во времени. Я бы много чего поменял в своей жизни в прошлом»</div>
+          <em>машина времени пока в разработке</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="future" hidden>
+          <span class="tape"></span><p class="card-kicker">будущее · 02</p>
+          <h3>Страх, который хочется преодолеть</h3>
+          <p>Чего боишься, но хотел бы однажды перестать?</p>
+          <div class="story-answer">«Перестать бояться будущего и не реализоваться»</div>
+          <em>страх, который можно превратить в движение</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="future" hidden>
+          <span class="tape"></span><p class="card-kicker">будущее · 03</p>
+          <h3>Через 10 лет</h3>
+          <p>Каким ты видишь себя и свою жизнь?</p>
+          <div class="story-answer">«Вижу себя на хорошей должности в IT. У меня есть жена и ребёнок, которые меня любят»</div>
+          <em>спойлер на хорошую главу впереди</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="future" hidden>
+          <span class="tape"></span><p class="card-kicker">будущее · 04</p>
+          <h3>Мечта, которую страшно начать</h3>
+          <p>Что давно хочется попробовать?</p>
+          <div class="story-answer">«Начать делать музыку»</div>
+          <em>идея для следующей главы</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+
+        <article class="story-card personal-card" data-kind="self" data-topic="future" hidden>
+          <span class="tape"></span><p class="card-kicker">будущее · 05</p>
+          <h3>На твоём 80-летии</h3>
+          <p>Что хотелось бы услышать о себе от людей?</p>
+          <div class="story-answer">«Хотел, чтобы мои дети были мне благодарны»</div>
+          <em>далёкий кадр, который говорит о многом</em><button class="reveal" type="button">открыть ответ</button>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="my-eyes section" id="my-eyes" aria-labelledby="my-eyes-title">
+      <span class="my-eyes-heart" aria-hidden="true">♥</span>
+      <div class="section-heading my-eyes-heading">
+        <p class="eyebrow dark">от меня — про тебя</p>
+        <h2 id="my-eyes-title">Ты моими глазами</h2>
+        <p>Небольшая часть нашей истории — в вопросах и моих ответах.</p>
+      </div>
+
+      <div class="my-eyes-list">
+        <details class="my-eyes-item">
+          <summary>Что ты больше всего любишь в нём?</summary>
+          <div class="my-eyes-answer"><p>то, что он всегда готов помочь, всегда будет рядом и поддержит, он очень надежный</p></div>
+        </details>
+
+        <details class="my-eyes-item">
+          <summary>Какой ваш совместный момент для тебя самый тёплый?</summary>
+          <div class="my-eyes-answer"><p>наши путешествия в Петербург, Калининград - как мы делили 1 сендвич на двоих, когда сидели в аэропорту часов 6, спонтанная поездка в Новосибирск и первый полет заграницу в Тайланд - самый красивый рассвет в 4 утра и слоники, и просто шаурма из шашлычки на улице у автосервиса)</p></div>
+        </details>
+
+        <details class="my-eyes-item">
+          <summary>Что бы ты хотела обязательно пережить вместе с ним в будущем?</summary>
+          <div class="my-eyes-answer"><p>увидеть весь мир вместе, прожить счастливую жизнь - создать счастливую семью и вместе провести старость</p></div>
+        </details>
+
+        <details class="my-eyes-item">
+          <summary>Какая у вас самая смешная общая история?</summary>
+          <div class="my-eyes-answer"><p>когда ты ночью зажал меня у стенки и сказал мне "это чтобы защищать тебя и охранять", а на утро ты даже этого не помнил</p></div>
+        </details>
+
+        <details class="my-eyes-item">
+          <summary>Если бы он был персонажем фильма или сериала, каким бы он был?</summary>
+          <div class="my-eyes-answer"><p>человеком пауком</p></div>
+        </details>
+
+        <details class="my-eyes-item">
+          <summary>Каким было твоё первое впечатление о нём?</summary>
+          <div class="my-eyes-answer"><p>я часто видела его в школе и всегда знала о его существовании, но с виду он мне казался каким-то нефором и недотрогой</p></div>
+        </details>
+
+        <details class="my-eyes-item">
+          <summary>Какой ваш день ты бы с удовольствием прожила ещё раз?</summary>
+          <div class="my-eyes-answer"><p>поездку встречать рассвет на Пхукете</p></div>
+        </details>
+
+        <details class="my-eyes-item">
+          <summary>Какая фотография из вашей общей коллекции для тебя самая важная и почему?</summary>
+          <div class="my-eyes-answer"><p>очень люблю нашу фотосессию в питере и калининграде</p></div>
+        </details>
+
+        <details class="my-eyes-item">
+          <summary>Какой момент ваших отношений ты считаешь началом чего-то действительно серьёзного?</summary>
+          <div class="my-eyes-answer"><p>когда мы поцеловались на новый год у Ульяны дома</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="photos section" id="photos">
+      <span class="big-star" aria-hidden="true">★</span>
+      <div class="section-heading">
+        <p class="eyebrow dark">кадры из архива</p>
+        <h2>Кадры, которые говорят сами</h2>
+        <p>Серьёзные лица, странные ракурсы, большие приключения и обычные дни, которые почему-то запомнились.</p>
+      </div>
+
+      <div class="photo-grid">
+        <button class="polaroid" type="button" data-full="assets/photo-1.jpg" aria-label="Открыть фото 1"><span class="photo-tape"></span><img src="assets/photo-1.jpg" alt="Фото из архива 1" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-2.jpg" aria-label="Открыть фото 2"><span class="photo-tape"></span><img src="assets/photo-2.jpg" alt="Фото из архива 2" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-3.jpg" aria-label="Открыть фото 3"><span class="photo-tape"></span><img src="assets/photo-3.jpg" alt="Фото из архива 3" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-4.jpg" aria-label="Открыть фото 4"><span class="photo-tape"></span><img src="assets/photo-4.jpg" alt="Фото из архива 4" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-5.jpg" aria-label="Открыть фото 5"><span class="photo-tape"></span><img src="assets/photo-5.jpg" alt="Фото из архива 5" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-6.jpg" aria-label="Открыть фото 6"><span class="photo-tape"></span><img src="assets/photo-6.jpg" alt="Фото из архива 6" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-7.jpg" aria-label="Открыть фото 7"><span class="photo-tape"></span><img src="assets/photo-7.jpg" alt="Фото из архива 7" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-8.jpg" aria-label="Открыть фото 8"><span class="photo-tape"></span><img src="assets/photo-8.jpg" alt="Фото из архива 8" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-9.jpg" aria-label="Открыть фото 9"><span class="photo-tape"></span><img src="assets/photo-9.jpg" alt="Фото из архива 9" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-10.jpg" aria-label="Открыть фото 10"><span class="photo-tape"></span><img src="assets/photo-10.jpg" alt="Фото из архива 10" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-11.jpg" aria-label="Открыть фото 11"><span class="photo-tape"></span><img src="assets/photo-11.jpg" alt="Фото из архива 11" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-12.jpg" aria-label="Открыть фото 12"><span class="photo-tape"></span><img src="assets/photo-12.jpg" alt="Фото из архива 12" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-13.jpg" aria-label="Открыть фото 13"><span class="photo-tape"></span><img src="assets/photo-13.jpg" alt="Фото из архива 13" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-14.jpg" aria-label="Открыть фото 14"><span class="photo-tape"></span><img src="assets/photo-14.jpg" alt="Фото из архива 14" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-15.jpg" aria-label="Открыть фото 15"><span class="photo-tape"></span><img src="assets/photo-15.jpg" alt="Фото из архива 15" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-16.jpg" aria-label="Открыть фото 16"><span class="photo-tape"></span><img src="assets/photo-16.jpg" alt="Фото из архива 16" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-17.jpg" aria-label="Открыть фото 17"><span class="photo-tape"></span><img src="assets/photo-17.jpg" alt="Фото из архива 17" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-18.jpg" aria-label="Открыть фото 18"><span class="photo-tape"></span><img src="assets/photo-18.jpg" alt="Фото из архива 18" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-19.jpg" aria-label="Открыть фото 19"><span class="photo-tape"></span><img src="assets/photo-19.jpg" alt="Фото из архива 19" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-20.jpg" aria-label="Открыть фото 20"><span class="photo-tape"></span><img src="assets/photo-20.jpg" alt="Фото из архива 20" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-21.jpg" aria-label="Открыть фото 21"><span class="photo-tape"></span><img src="assets/photo-21.jpg" alt="Фото из архива 21" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-22.jpg" aria-label="Открыть фото 22"><span class="photo-tape"></span><img src="assets/photo-22.jpg" alt="Фото из архива 22" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-23.jpg" aria-label="Открыть фото 23"><span class="photo-tape"></span><img src="assets/photo-23.jpg" alt="Фото из архива 23" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-24.jpg" aria-label="Открыть фото 24"><span class="photo-tape"></span><img src="assets/photo-24.jpg" alt="Фото из архива 24" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-25.jpg" aria-label="Открыть фото 25"><span class="photo-tape"></span><img src="assets/photo-25.jpg" alt="Фото из архива 25" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-26.jpg" aria-label="Открыть фото 26"><span class="photo-tape"></span><img src="assets/photo-26.jpg" alt="Фото из архива 26" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-27.jpg" aria-label="Открыть фото 27"><span class="photo-tape"></span><img src="assets/photo-27.jpg" alt="Фото из архива 27" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-28.jpg" aria-label="Открыть фото 28"><span class="photo-tape"></span><img src="assets/photo-28.jpg" alt="Фото из архива 28" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-29.jpg" aria-label="Открыть фото 29"><span class="photo-tape"></span><img src="assets/photo-29.jpg" alt="Фото из архива 29" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-30.jpg" aria-label="Открыть фото 30"><span class="photo-tape"></span><img src="assets/photo-30.jpg" alt="Фото из архива 30" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-31.jpg" aria-label="Открыть фото 31"><span class="photo-tape"></span><img src="assets/photo-31.jpg" alt="Фото из архива 31" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-32.jpg" aria-label="Открыть фото 32"><span class="photo-tape"></span><img src="assets/photo-32.jpg" alt="Фото из архива 32" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-33.jpg" aria-label="Открыть фото 33"><span class="photo-tape"></span><img src="assets/photo-33.jpg" alt="Фото из архива 33" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-34.jpg" aria-label="Открыть фото 34"><span class="photo-tape"></span><img src="assets/photo-34.jpg" alt="Фото из архива 34" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-35.jpg" aria-label="Открыть фото 35"><span class="photo-tape"></span><img src="assets/photo-35.jpg" alt="Фото из архива 35" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-36.jpg" aria-label="Открыть фото 36"><span class="photo-tape"></span><img src="assets/photo-36.jpg" alt="Фото из архива 36" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-37.jpg" aria-label="Открыть фото 37"><span class="photo-tape"></span><img src="assets/photo-37.jpg" alt="Фото из архива 37" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-38.jpg" aria-label="Открыть фото 38"><span class="photo-tape"></span><img src="assets/photo-38.jpg" alt="Фото из архива 38" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-39.jpg" aria-label="Открыть фото 39"><span class="photo-tape"></span><img src="assets/photo-39.jpg" alt="Фото из архива 39" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-40.jpg" aria-label="Открыть фото 40"><span class="photo-tape"></span><img src="assets/photo-40.jpg" alt="Фото из архива 40" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-41.jpg" aria-label="Открыть фото 41"><span class="photo-tape"></span><img src="assets/photo-41.jpg" alt="Фото из архива 41" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-42.jpg" aria-label="Открыть фото 42"><span class="photo-tape"></span><img src="assets/photo-42.jpg" alt="Фото из архива 42" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-43.jpg" aria-label="Открыть фото 43"><span class="photo-tape"></span><img src="assets/photo-43.jpg" alt="Фото из архива 43" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-44.jpg" aria-label="Открыть фото 44"><span class="photo-tape"></span><img src="assets/photo-44.jpg" alt="Фото из архива 44" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-45.jpg" aria-label="Открыть фото 45"><span class="photo-tape"></span><img src="assets/photo-45.jpg" alt="Фото из архива 45" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-46.jpg" aria-label="Открыть фото 46"><span class="photo-tape"></span><img src="assets/photo-46.jpg" alt="Фото из архива 46" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-47.jpg" aria-label="Открыть фото 47"><span class="photo-tape"></span><img src="assets/photo-47.jpg" alt="Фото из архива 47" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-48.jpg" aria-label="Открыть фото 48"><span class="photo-tape"></span><img src="assets/photo-48.jpg" alt="Фото из архива 48" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-49.jpg" aria-label="Открыть фото 49"><span class="photo-tape"></span><img src="assets/photo-49.jpg" alt="Фото из архива 49" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-50.jpg" aria-label="Открыть фото 50"><span class="photo-tape"></span><img src="assets/photo-50.jpg" alt="Фото из архива 50" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-51.jpg" aria-label="Открыть фото 51"><span class="photo-tape"></span><img src="assets/photo-51.jpg" alt="Фото из архива 51" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-52.jpg" aria-label="Открыть фото 52"><span class="photo-tape"></span><img src="assets/photo-52.jpg" alt="Фото из архива 52" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-53.jpg" aria-label="Открыть фото 53"><span class="photo-tape"></span><img src="assets/photo-53.jpg" alt="Фото из архива 53" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-54.jpg" aria-label="Открыть фото 54"><span class="photo-tape"></span><img src="assets/photo-54.jpg" alt="Фото из архива 54" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-55.jpg" aria-label="Открыть фото 55"><span class="photo-tape"></span><img src="assets/photo-55.jpg" alt="Фото из архива 55" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-56.jpg" aria-label="Открыть фото 56"><span class="photo-tape"></span><img src="assets/photo-56.jpg" alt="Фото из архива 56" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-57.jpg" aria-label="Открыть фото 57"><span class="photo-tape"></span><img src="assets/photo-57.jpg" alt="Фото из архива 57" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-58.jpg" aria-label="Открыть фото 58"><span class="photo-tape"></span><img src="assets/photo-58.jpg" alt="Фото из архива 58" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-59.jpg" aria-label="Открыть фото 59"><span class="photo-tape"></span><img src="assets/photo-59.jpg" alt="Фото из архива 59" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-60.jpg" aria-label="Открыть фото 60"><span class="photo-tape"></span><img src="assets/photo-60.jpg" alt="Фото из архива 60" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-61.jpg" aria-label="Открыть фото 61"><span class="photo-tape"></span><img src="assets/photo-61.jpg" alt="Фото из архива 61" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-62.jpg" aria-label="Открыть фото 62"><span class="photo-tape"></span><img src="assets/photo-62.jpg" alt="Фото из архива 62" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-63.jpg" aria-label="Открыть фото 63"><span class="photo-tape"></span><img src="assets/photo-63.jpg" alt="Фото из архива 63" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-64.jpg" aria-label="Открыть фото 64"><span class="photo-tape"></span><img src="assets/photo-64.jpg" alt="Фото из архива 64" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-65.jpg" aria-label="Открыть фото 65"><span class="photo-tape"></span><img src="assets/photo-65.jpg" alt="Фото из архива 65" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-66.jpg" aria-label="Открыть фото 66"><span class="photo-tape"></span><img src="assets/photo-66.jpg" alt="Фото из архива 66" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-67.jpg" aria-label="Открыть фото 67"><span class="photo-tape"></span><img src="assets/photo-67.jpg" alt="Фото из архива 67" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-68.jpg" aria-label="Открыть фото 68"><span class="photo-tape"></span><img src="assets/photo-68.jpg" alt="Фото из архива 68" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-69.jpg" aria-label="Открыть фото 69"><span class="photo-tape"></span><img src="assets/photo-69.jpg" alt="Фото из архива 69" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-70.jpg" aria-label="Открыть фото 70"><span class="photo-tape"></span><img src="assets/photo-70.jpg" alt="Фото из архива 70" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-71.jpg" aria-label="Открыть фото 71"><span class="photo-tape"></span><img src="assets/photo-71.jpg" alt="Фото из архива 71" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-72.jpg" aria-label="Открыть фото 72"><span class="photo-tape"></span><img src="assets/photo-72.jpg" alt="Фото из архива 72" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-73.jpg" aria-label="Открыть фото 73"><span class="photo-tape"></span><img src="assets/photo-73.jpg" alt="Фото из архива 73" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-74.jpg" aria-label="Открыть фото 74"><span class="photo-tape"></span><img src="assets/photo-74.jpg" alt="Фото из архива 74" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-75.jpg" aria-label="Открыть фото 75"><span class="photo-tape"></span><img src="assets/photo-75.jpg" alt="Фото из архива 75" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-76.jpg" aria-label="Открыть фото 76"><span class="photo-tape"></span><img src="assets/photo-76.jpg" alt="Фото из архива 76" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-77.jpg" aria-label="Открыть фото 77"><span class="photo-tape"></span><img src="assets/photo-77.jpg" alt="Фото из архива 77" loading="lazy" decoding="async" /></button>
+        <button class="polaroid" type="button" data-full="assets/photo-78.jpg" aria-label="Открыть фото 78"><span class="photo-tape"></span><img src="assets/photo-78.jpg" alt="Фото из архива 78" loading="lazy" decoding="async" /></button>
+      </div>
+    </section>
+
+    <section class="letter" id="letter">
+      <article class="letter-sheet">
+        <span class="paperclip" aria-hidden="true">∪</span>
+        <p class="eyebrow dark">последняя записка</p>
+        <h2>И всё это — только начало</h2>
+        <p>В этих воспоминаниях есть всё сразу: смешные школьные истории, мечта о музыке, желание состояться в IT, много путешествовать и однажды построить счастливую семью. Мне особенно нравится, что даже обычный вторник для тебя становится хорошим, если рядом есть важные люди.</p>
+        <p class="signature">С любовью, всегда рядом ♡</p>
+        <span class="heart-mark" aria-hidden="true">♥</span>
+      </article>
+      <div class="favorite-card" aria-hidden="true"><small>ONE OF ONE</small><strong>FAVORITE<br />PERSON</strong><span>FOREVER EDITION</span></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Собрано с любовью и сохранено навсегда.</p>
+    <a class="back-to-top" href="#top">наверх ↑</a>
+  </footer>
+
+
+  <dialog class="story-dialog" id="storyDialog" aria-labelledby="storyDialogTitle">
+    <div class="story-dialog-shell">
+      <button class="story-dialog-close" type="button" aria-label="Закрыть ответы">×</button>
+      <p class="story-dialog-kicker"></p>
+      <h3 id="storyDialogTitle"></h3>
+      <div class="story-dialog-content"></div>
+    </div>
+  </dialog>
+
+  <dialog class="lightbox" id="lightbox">
+    <button class="lightbox-close" type="button" aria-label="Закрыть">×</button>
+    <img src="" alt="Увеличенная фотография" />
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
